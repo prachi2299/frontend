@@ -1,0 +1,30 @@
+.deco{
+    background-image: url('src/assets/images/students-campus.jpg');
+}
+.container{
+    margin-bottom: 100px;
+    text-align: center;
+    background-color: rgb(102, 136, 101);
+}
+.col-sm-4{
+    font-size: 18px;
+}
+a{
+    color: black;
+    font-weight: 500;
+}
+a:hover{
+    color: rgb(236, 235, 221);
+}
+.container1{
+margin-top: 60px;
+}
+.col-sm-10{
+    line-height: 100px;
+    height: 100px;
+    background-color: rgb(102, 136, 101);
+
+}
+span{
+    background-color: darkgray;
+}
