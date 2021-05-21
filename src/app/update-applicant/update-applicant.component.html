@@ -1,0 +1,71 @@
+<h2 style="text-align: center;" [hidden]="submitted">UPDATE APPLICANT</h2>
+<div style="width:400px" [hidden]= "submitted" class="form1" *ngIf="!errorMsg">
+    <!-- <form (ngSubmit)="onSubmit()"> -->
+        <form #updateApplicantForm="ngForm" novalidate>
+            <!--<div class="form-group">
+                <label for="id">Applicant ID</label>
+                <input type="text" name="id" class="form-control" 
+                        placeholder="Enter applicant Id" required [(ngModel)]= "applicantDetail.applicantId" #id="ngModel" >
+                        <small class="form-text text-muted" *ngIf="id.touched && !id.valid">Applicant ID required</small>
+    
+           </div>-->
+        
+        <div class="form-group">
+            <label for="aname">Applicant Name</label>
+            <input type="text" name="aname" class="form-control" 
+                  placeholder="Enter the applicant name" 
+                  required [(ngModel)]="applicantDetail.applicantName" #aname="ngModel" >
+            <small class="form-text text-muted" *ngIf="aname.touched && !aname.valid">Name required</small>
+
+        </div>
+      <div class="form-group">
+            <label for="mob">Applicant mobile number</label>
+            <input type="text" name="mob" class="form-control" 
+                  placeholder="Enter the Applicant mobile number" required minlength="10" maxlength="10"
+                  [(ngModel)]= "applicantDetail.mobileNumber"  #mob="ngModel">
+            <small class="form-text text-muted" *ngIf="mob.touched && !mob.valid && !mob.errors?.minlength">Mobile number required</small>
+            <small class="form-text text-muted" *ngIf="mob.errors?.minlength">Mobile number must be of length 10</small>
+        </div>
+        <div class="form-group">
+            <label for="degree">Applicant Degree</label>
+            <input type="text" name="degree" class="form-control" 
+                  placeholder="Enter the degree" required 
+                  [(ngModel)]= "applicantDetail.applicantDegree" #degree="ngModel">
+            <small class="form-text text-muted" *ngIf="degree.touched && !degree.valid">Degree required</small>
+                 
+        </div>
+        <div class="form-group">
+            <label for="marks">Graduation Percentage</label>
+            <input type="text" name="marks" class="form-control" 
+                  placeholder="Enter the percentage" required pattern="[0-9]*" maxlength="3"
+                  [(ngModel)]= "applicantDetail.applicantGraduationPercent" #marks="ngModel">
+                  
+            <small class="form-text text-muted" *ngIf="marks.touched && !marks.errors?.pattern && !marks.valid">Percentage required</small>
+            <small  class="form-text text-muted" *ngIf="marks.errors?.pattern">Enter integer value</small>
+                  
+        </div>
+
+        <div class="form-group">
+          <label for="statuss">Admission status</label>
+          <select class="form-control" id="statuss" required [(ngModel)]= "applicantDetail.status" name="statuss" #statuss="ngModel">
+            <option *ngFor="let sta of status" [value]="sta">{{sta}}</option>
+          </select>
+          <small class="form-text text-muted" *ngIf="statuss.touched && !statuss.valid">Select status</small>      
+      </div>
+             
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]="!updateApplicantForm.valid">Update Applicant</button>
+        <button type="submit" class="btn btn-default" (click)= "updateApplicantForm.reset()">Reset</button>
+    </form>
+</div>
+
+<div class="row"  *ngIf="showMsg && !errorMsg">
+    <div class="col-xs-12">
+        <p class="alert alert-success">
+            <strong>Update Successful!</strong> Please click here to <a routerLink="/applicants/{{applicantDetail.applicantId}}">view applicant</a>
+        </p>
+    </div>
+</div>
+
+<div *ngIf="errorMsg">
+<div class="alert alert-danger">{{errorMsg}} ---> APPLICANT ID {{searchapplicantId}} NOT FOUND</div>
+</div>

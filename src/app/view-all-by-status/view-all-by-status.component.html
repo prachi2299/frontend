@@ -1,0 +1,26 @@
+<p>view-all-by-status works!</p>
+<div *ngFor="let applicant of applicantList" class="card" style="width: 500px;  margin: 20px; "> 
+    <div class="card-header">APPLICANT INFORMATION</div>
+    <div class="card-body">
+    <div>
+        <label><b>Applicant ID : </b></label>{{applicant.applicantId}}
+    </div>
+    <div>
+        <label><b>Applicant Name : </b></label>{{applicant.applicantName}}
+    </div>
+    <div>
+        <label><b>Mobile Number : </b></label>{{applicant.mobileNumber}}
+    </div>
+    <div>
+        <label><b>Degree : </b></label>{{applicant.applicantDegree}}
+    </div>
+    <div>
+        <label><b>Graduation Percentage : </b></label>{{applicant.applicantGraduationPercent}}
+    </div>
+    <div>
+        <label><b>Applicant status : </b></label>{{applicant.status}}
+    </div>
+</div>
+    
+</div>
+

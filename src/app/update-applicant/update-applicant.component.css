@@ -1,0 +1,32 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+.form1{
+    margin-left: 475px;
+    white-space: pre;
+
+}
+.btn-default{
+ margin-left: 15em;
+}
+
+input.ng-touched.ng-invalid{
+    border:1px solid red;
+}
+
+select.ng-touched.ng-invalid{
+    border:1px solid red;
+}
+p{
+    text-align: center;
+}
+
+h2{
+    color: white;
+    background-color: rgb(80, 31, 31);
+}
+
+input,select{
+    border-radius:1em;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.6);
+
+}

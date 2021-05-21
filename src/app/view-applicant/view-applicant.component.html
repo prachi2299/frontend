@@ -1,0 +1,29 @@
+<div *ngIf="applicantDetail && !errorMsg" class="card" style="width: 500px;  margin: 20px; "> 
+    <div class="card-header">APPLICANT INFORMATION</div>
+    <div class="card-body">
+    <div>
+        <label><b>Applicant ID : </b></label>{{applicantDetail.applicantId}}
+    </div>
+    <div>
+        <label><b>Applicant Name : </b></label>{{applicantDetail.applicantName}}
+    </div>
+    <div>
+        <label><b>Mobile Number : </b></label>{{applicantDetail.mobileNumber}}
+    </div>
+    <div>
+        <label><b>Degree : </b></label>{{applicantDetail.applicantDegree}}
+    </div>
+    <div>
+        <label><b>Graduation Percentage : </b></label>{{applicantDetail.applicantGraduationPercent}}
+    </div>
+    <div>
+        <label><b>Applicant status : </b></label>{{applicantDetail.status}}
+    </div>
+    </div>
+<div>
+     <a href="applicants/update/{{applicantDetail.applicantId}}">Update Applicant</a>  <a href="applicants/delete/{{applicantDetail.applicantId}}">Delete Applicant</a>
+</div>
+</div>
+<div *ngIf="errorMsg">
+    <div class="alert alert-danger">{{errorMsg}} ---> Applicant ID: {{searchApplicantId}} NOT FOUND</div>
+ </div>
