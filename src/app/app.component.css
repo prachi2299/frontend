@@ -1,0 +1,49 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+.col-sm{
+    height:150px;
+}
+img{
+    width: 150px;
+
+    
+}
+.jumbotron-fluid{
+    position: relative; 
+    
+}
+.jumbotron-fluid::after{
+    position: absolute;
+    content:'';
+    background-size: cover;
+    top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.2;
+      z-index: 0;
+      height: 1000px;
+      background-image:url('/assets/images/students-campus.jpg');
+
+
+} 
+.headbody{
+    z-index: 1;
+    position: relative;
+}
+.display-3{
+    color: rgb(7, 7, 102);
+    background-color: rgb(145, 194, 194);
+    text-align: center;
+}
+
+.line1{
+    opacity: 1;
+     color: rgb(145, 10, 10);
+ height: 5px;
+ }
+ 
+
+hr.my-2{
+    height: 2px;
+opacity: 1;}
